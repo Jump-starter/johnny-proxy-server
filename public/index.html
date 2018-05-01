@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+    <link href="https://d3mlfyygrfdi2i.cloudfront.net/favicon.png?v=2" rel="icon" type="image/png">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="http://www.samgetlan.com/navbar/styles.css">
+    <link rel="stylesheet" href="http://s3-us-west-1.amazonaws.com/fec-kickstarter-campaign-module/styles.css">
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/updates-and-comments/Updates/styles.css">
+    <link rel="stylesheet" href="http://www.samgetlan.com/community/styles.css">
+    <title>NotAirBnB</title>
+  </head>
+  <body>
+    <div id="application">
+      <div id="Summary"></div>
+      <div id="Navbar"></div>
+      <div id="Campaign"></div>
+      <div id="Updates" class="hidden"></div>
+      <div id="Comments" class="hidden"></div>
+      <div id="Community" class="hidden"></div>
+    </div>
+    <script src="lib/react-development.js"></script>
+    <script src="lib/react-dom.development.js"></script>
+    <script src="http://s3-us-west-1.amazonaws.com/hackreactorfec/bundle.js"></script>
+    <script src="http://www.samgetlan.com/navbar/bundle.js"></script>
+    <script src="http://s3-us-west-1.amazonaws.com/updates-and-comments/Updates/bundle.js"></script>
+    <script src="http://www.samgetlan.com/community/bundle.js"></script>
+    <script src="http://s3-us-west-1.amazonaws.com/fec-kickstarter-campaign-module/bundle.js"></script>
+    <script src="https://s3-us-west-1.amazonaws.com/updates-and-comments/Comments/bundle.js"></script>
+    <script>
+      const project = window.location.href.split('?')[1] || 0;
+      ReactDOM.render(
+        React.createElement(Navbar, {projectId: project}),
+        document.getElementById('Navbar')
+      );
+      ReactDOM.render(
+        React.createElement(Community, {projectId: project}),
+        document.getElementById('Community')
+      );
+      ReactDOM.render(
+        React.createElement(Campaign, {projectId: project, username: "Saige99"}),
+        document.getElementById('Campaign')
+      );
+      ReactDOM.render(
+        React.createElement(App, {projectId: project}),
+        document.getElementById('Summary')
+      );
+      ReactDOM.render(
+        React.createElement(Updates, {projectId: project}),
+        document.getElementById('Updates')
+      );
+      ReactDOM.render(
+        React.createElement(Comments, {projectId: project}),
+        document.getElementById('Comments')
+      );
+    </script>
+    <script src="http://www.samgetlan.com/navbar/navbarControl.js"></script>
+  </body>
+</html>

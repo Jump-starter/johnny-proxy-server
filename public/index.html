@@ -22,12 +22,11 @@
     </div>
     <script src="lib/react-development.js"></script>
     <script src="lib/react-dom.development.js"></script>
-    <script src="http://s3-us-west-1.amazonaws.com/hackreactorfec/bundle.js"></script>
-    <script src="http://www.samgetlan.com/navbar/bundle.js"></script>
-    <script src="http://s3-us-west-1.amazonaws.com/updates-and-comments/Updates/bundle.js"></script>
-    <script src="http://www.samgetlan.com/community/bundle.js"></script>
-    <script src="http://s3-us-west-1.amazonaws.com/fec-kickstarter-campaign-module/bundle.js"></script>
-    <script src="https://s3-us-west-1.amazonaws.com/updates-and-comments/Comments/bundle.js"></script>
+    <script src="https://s3-us-west-1.amazonaws.com/jumpstarterproductsummary/bundle.js"></script>
+    <script src="https://s3-us-west-1.amazonaws.com/jumpstarternavbar/bundle.js"></script>
+    <script src="https://s3-us-west-1.amazonaws.com/jumpstartercommunity/bundle.js"></script>
+    <script src="https://s3-us-west-1.amazonaws.com/jumpstartercampaign/bundle.js"></script>
+    <script src="https://s3.us-east-2.amazonaws.com/jumpstarter-static/bundle.js"></script>
     <script>
       const project = window.location.href.split('?')[1] || 0;
       ReactDOM.render(
@@ -43,7 +42,7 @@
         document.getElementById('Campaign')
       );
       ReactDOM.render(
-        React.createElement(App, {projectId: project}),
+        React.createElement(Summary, {projectId: project}),
         document.getElementById('Summary')
       );
       ReactDOM.render(

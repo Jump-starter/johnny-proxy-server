@@ -29,12 +29,12 @@ const renderComponents = (components, props = {}) => {
   });
 };
 
-app.get('/items/:id', function(req, res) {
-  let components = renderComponents(services, {itemid: req.params.id});
+app.get('/:id', function(req, res) {
+  let components = renderComponents(services, {projectId: req.params.id});
   res.end(Layout(
     'SDC Demo',
     App(...components),
-    Scripts(Object.keys(services))
+    Scripts(Object.keys(services), req.params.id)
   ));
 });
 
